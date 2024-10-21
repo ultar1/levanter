@@ -127,7 +127,7 @@
   },
   "addons": [
     {
-      "plan": "heroku-postgresql:basic"
+      "plan": "heroku-postgresql"
     }
   ],
 
