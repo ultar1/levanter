@@ -1,12 +1,12 @@
 const { Client, logger } = require('./lib/client');
 const { DATABASE, VERSION } = require('./config');
 const { stopInstance } = require('./lib/pm2');
-const express = require('express');  // Import express
-const app = express();
+const http = require('http');  // Use native HTTP server for lightweight server
 
 const start = async () => {
   logger.info(`levanter ${VERSION}`);
 
+  // Attempt to authenticate the database
   try {
     await DATABASE.authenticate({ retry: { max: 3 } });
   } catch (error) {
@@ -15,21 +15,24 @@ const start = async () => {
     return stopInstance();
   }
 
+  // Start the bot
   try {
     const bot = new Client();
     await bot.connect();
   } catch (error) {
     logger.error(error);
+    return stopInstance();
   }
 
-  // Bind the app to the Heroku-assigned port
-  const PORT = process.env.PORT || 3000;
-  app.get('/', (req, res) => {
-    res.send('Levanter bot is running!');
+  // Bind to Heroku's port to keep the app alive
+  const PORT = process.env.PORT || 3000;  // Default to port 3000 for local dev
+  const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Levanter bot is running!\n');
   });
-  
-  app.listen(PORT, () => {
-    logger.info(`Server is running on port ${PORT}`);
+
+  server.listen(PORT, () => {
+    logger.info(`Server is running and listening on port ${PORT}`);
   });
 };
 
