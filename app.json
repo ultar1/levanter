@@ -1,7 +1,7 @@
 {
   "name": "levanter@5.2.3",
   "description": "",
-  "keywords": ["noedjs"],
+  "keywords": ["nodejs"],
   "success_url": "/",
   "env": {
     "ALWAYS_ONLINE": {
@@ -36,24 +36,26 @@
     },
     "HEROKU_APP_NAME": {
       "description": "Heroku app name, same as above entered.",
-      "required": true
+      "required": true,
+      "value": ""
     },
     "HEROKU_API_KEY": {
       "description": "Heroku account api key, https://dashboard.heroku.com/account",
-      "required": true
+      "required": true,
+      "value": ""
     },
     "RMBG_KEY": {
       "description": "API key from remove.bg, required for plugin rmbg",
       "required": false,
       "value": "null"
     },
-    "LANGUAG": {
+    "LANGUAGE": {
       "description": "Default Language for tts or trt",
       "required": false,
       "value": "en"
     },
     "WARN_LIMIT": {
-      "description": "Maximum number of wanings to a person.",
+      "description": "Maximum number of warnings to a person.",
       "required": false,
       "value": "3"
     },
@@ -135,5 +137,5 @@
       "quantity": 1,
       "size": "basic"
     }
-  },
+  }
 }
