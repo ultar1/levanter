@@ -142,7 +142,7 @@
     }
   ],
   "formation": {
-    "worker": {
+    "web": {
       "quantity": 1,
       "size": "basic"
     }
