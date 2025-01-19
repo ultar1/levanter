@@ -140,7 +140,7 @@
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-apt.git"
+      "url": "heroku-community/apt"
     }
   ]
 }
