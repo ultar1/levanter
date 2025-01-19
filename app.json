@@ -1,9 +1,9 @@
 {
   "name": "levanter@5.2.3",
   "description": "",
-  "keywords": ["noedjs"],
+  "keywords": ["nodejs"],
   "success_url": "/",
-  "stack": "container",
+  "stack": "heroku-24",
   "env": {
     "ALWAYS_ONLINE": {
       "description": "show bot number last seen as online",
@@ -54,7 +54,7 @@
       "value": "en"
     },
     "WARN_LIMIT": {
-      "description": "Maximum number of wanings to a person.",
+      "description": "Maximum number of warnings to a person.",
       "required": false,
       "value": "3"
     },
@@ -126,13 +126,23 @@
   },
   "addons": [
     {
-      "plan": "heroku-postgresql:basic"
+      "plan": "heroku-postgresql"
     }
   ],
 
-  "buildpacks": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
   "formation": {
-    "web": {
+    "worker": {
       "quantity": 1,
       "size": "basic"
     }
