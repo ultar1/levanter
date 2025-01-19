@@ -7,7 +7,7 @@
     "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "apt-get update && apt-get install -y git"
+    "postinstall": "git init && git remote add origin https://github,com/lyfe00011/levanter.git && git fetch"
   },
   
   "author": "",
