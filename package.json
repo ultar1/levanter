@@ -7,7 +7,11 @@
     "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5"
+    "postinstall": "git init && git remote add origin https://github.com/lyfe00011/levanter.git && git fetch"
+  },
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.22.22"
   },
   "author": "",
   "license": "MIT",
