@@ -7,13 +7,13 @@
     "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "git init && git remote add origin https://github.com/lyfe00011/levanter.git && echo '# Levanter' > README.md && git add README.md && git commit -m 'Initial commit' && git fetch && git pull origin master"
+    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.3.3",
-    "baileys": "git+https://lyfe00011-admin@bitbucket.org/lyfe00011/baileys.git",
+    "baileys": "https://lyfe00011-admin@bitbucket.org/lyfe00011/baileys.js",
     "browser-id3-writer": "^4.4.0",
     "cheerio": "^1.0.0-rc.10",
     "cookie": "^0.5.0",
