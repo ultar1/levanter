@@ -7,9 +7,8 @@
     "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "git init && git remote add origin https://github.com/lyfe00011/levanter.git && echo '# Levanter' > README.md && git add README.md && git commit -m 'Initial commit' && git fetch && git pull origin master""
+    "postinstall": "git init && git remote add origin https://github.com/lyfe00011/levanter.git && echo '# Levanter' > README.md && git add README.md && git commit -m 'Initial commit' && git fetch && git pull origin master"
   },
-  
   "author": "",
   "license": "MIT",
   "dependencies": {
