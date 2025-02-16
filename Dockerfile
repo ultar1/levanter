@@ -11,5 +11,5 @@ RUN git pull origin main
 # Install dependencies
 RUN yarn install
 
-# Start the application using PM2
-CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+# Start the application using Node.js
+CMD ["node", "index.js"]
