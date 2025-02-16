@@ -6,7 +6,7 @@ WORKDIR /root/LyF/
 
 # Set the remote URL to your repository and pull the latest changes
 RUN git remote add origin https://github.com/ultar1/levanter.git
-RUN git pull origin main
+RUN git pull origin master  # Change 'main' to 'master' if your default branch is 'master'
 
 # Install dependencies
 RUN yarn install
