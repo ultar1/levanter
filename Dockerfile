@@ -9,13 +9,12 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Initialize with correct repo
+# Clone repo in a simpler way
 RUN rm -rf .git && \
-    git init && \
-    git remote add origin https://github.com/lyfe00011/whatsapp-bot-md.git && \
-    git fetch && \
-    git checkout -b main && \
-    git branch --set-upstream-to=origin/main main
+    git clone https://github.com/lyfe00011/whatsapp-bot-md.git /tmp/repo && \
+    cp -r /tmp/repo/.git . && \
+    rm -rf /tmp/repo && \
+    git checkout main
 
 RUN npm install -g pm2
 RUN npm install --legacy-peer-deps
