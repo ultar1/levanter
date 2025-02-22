@@ -1,8 +1,7 @@
 module.exports = {
   apps: [{
     name: 'levanter',
-    script: 'npm',
-    args: 'start',
+    script: 'index.js',
     max_restarts: 10,
     min_uptime: '5s',
     kill_timeout: 5000,
