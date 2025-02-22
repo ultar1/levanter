@@ -1,5 +1,15 @@
-FROM quay.io/lyfe00011/md:beta
-RUN git clone https://github.com/ultar1/levanter.git /root/LyFE/
-WORKDIR /root/LyFE/
-RUN yarn install
-CMD ["npm", "start"]
+FROM node:18-slim
+
+WORKDIR /app
+COPY . .
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g pm2
+RUN npm install
+
+# Set the CMD to run PM2 in no-daemon mode
+CMD ["pm2-runtime", "start", "npm", "--", "start"]
