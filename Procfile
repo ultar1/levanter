@@ -1,1 +1,1 @@
-worker: npm start
+worker: pm2 start npm --name "levanter" -- start
