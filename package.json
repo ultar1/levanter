@@ -2,7 +2,7 @@
   "name": "levanter",
   "version": "3.6.6",
   "description": "",
-  "main": "index.js",
+  "main": "ecosystem.config.js",
   "scripts": {
     "start": "npm start",
     "docker": "pm2-runtime start . --name levanter",
