@@ -2,13 +2,12 @@
   "name": "levanter",
   "version": "3.6.6",
   "description": "",
-  "main": "ecosystem.config.js",
+  "main": "index.js",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js",
+    "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5",
-    "update-npm": "npm install -g npm@11.1.0"
+    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5"
   },
   "author": "",
   "license": "MIT",
@@ -33,7 +32,6 @@
     "moment": "^2.29.4",
     "node-fetch": "3.2.2",
     "node-webpmux": "^3.1.4",
-    "npm": "11.1.0",
     "pdfkit": "^0.13.0",
     "pg": "^8.7.3",
     "pino-pretty": "^9.1.1",
