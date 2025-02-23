@@ -55,3 +55,4 @@ function startPm2() {
     })
   }
 }
+startPm2()
