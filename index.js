@@ -4,10 +4,6 @@ const path = require('path')
 
 const SESSION_ID = 'levanter_24b2cf2a83f6df4f07a1a579db54d32a94' // Edit this line only, don't remove ' <- this symbol
 
-let nodeRestartCount = 0
-const maxNodeRestarts = 5
-const restartWindow = 30000 // 30 seconds
-let lastRestartTime = Date.now()
 function startPm2() {
   const pm2 = spawn('yarn', ['pm2', 'start', 'index.js', '--name', 'levanter', '--attach'], {
     cwd: 'levanter',
