@@ -1,21 +1,22 @@
-const { Client, logger } = require('./lib/client')
-const { DATABASE, VERSION } = require('./config')
-const { stopInstance } = require('./lib/pm2')
+require('dotenv').config();
+const { Client } = require('./lib/client');
+const { getVars } = require('./lib/vars');
+const logger = require('./logger');
 
 const start = async () => {
-  logger.info(`levanter ${VERSION}`)
   try {
-    await DATABASE.authenticate({ retry: { max: 3 } })
-  } catch (error) {
-    const databaseUrl = process.env.DATABASE_URL
-    logger.error({ msg: 'Unable to connect to the database', error: error.message, databaseUrl })
-    return stopInstance()
+    const session = process.env.SESSION_ID;
+    if (!session) {
+      throw new Error('SESSION_ID is not defined');
+    }
+
+    const client = new Client();
+    await client.connect(session);
+    logger.info('Client connected');
+  } catch (err) {
+    logger.error(err.message, { err });
+    process.exit(1);
   }
-  try {
-    const bot = new Client()
-    await bot.connect()
-  } catch (error) {
-    logger.error(error)
-  }
-}
-start()
+};
+
+start();
