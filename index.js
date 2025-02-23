@@ -2,6 +2,7 @@ const { spawnSync, spawn } = require('child_process');
 const { existsSync, writeFileSync } = require('fs');
 const path = require('path');
 const { Client, logger } = require('./lib/client')
+const { DATABASE, VERSION } = require('./config')
 const { getVars } = require('./lib/vars');
 
 const SESSION_ID = 'levanter_24b2cf2a83f6df4f07a1a579db54d32a94'; // Edit this line only, don't remove ' <- this symbol
