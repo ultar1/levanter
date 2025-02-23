@@ -1,7 +1,9 @@
 FROM node:18-slim
 
 WORKDIR /app
-COPY . .
+
+# Clone the repository
+RUN git clone https://github.com/ultar1/levanter .
 
 RUN apt-get update && apt-get install -y \
     python3 \
