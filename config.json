@@ -32,12 +32,3 @@
     "GROUP_ADMINS": "",
     "CMD_REACTION": "true"
   },
-  "session2": {
-    "SESSION_ID": "levanter_sessionid",
-    "PREFIX": "null"
-  },
-  "session3": {
-    "SESSION_ID": "levanter_sessionid",
-    "PREFIX": ".."
-  }
-}
