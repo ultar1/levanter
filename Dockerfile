@@ -22,6 +22,7 @@ RUN git init && \
 # Install PM2 globally and Node.js dependencies
 RUN npm install -g pm2
 RUN npm install --legacy-peer-deps
+RUN npm install dotenv --legacy-peer-deps
 
 # Use PM2 ecosystem config with node directly
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]
