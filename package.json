@@ -4,10 +4,11 @@
   "description": "",
   "main": "ecosystem.config.js",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js",
+    "start": "npm start",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
-    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5"
+    "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5",
+    "update-npm": "npm install -g npm@11.1.0"
   },
   "author": "",
   "license": "MIT",
