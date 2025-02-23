@@ -4,7 +4,6 @@ const path = require('path');
 const config = require('./config.json');
 const { Client } = require('./lib/client');
 const { getVars } = require('./lib/vars');
-const logger = require('./logger');
 
 const SESSION_ID = process.env.SESSION_ID || config.SESSION_ID;
 if (!SESSION_ID) {
