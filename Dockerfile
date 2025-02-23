@@ -9,12 +9,12 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Clone repo in a simpler way
-RUN rm -rf .git && \
-    git clone https://github.com/lyfe00011/whatsapp-bot-md.git /tmp/repo && \
-    cp -r /tmp/repo/.git . && \
-    rm -rf /tmp/repo && \
-    git checkout main
+# Initialize git locally without network access
+RUN git init && \
+    git config --global user.email "ezenwugoemmanuel2004@gmail.com" && \
+    git config --global user.name "ultar1" && \
+    git add . && \
+    git commit -m "Local commit"
 
 RUN npm install -g pm2
 RUN npm install --legacy-peer-deps
