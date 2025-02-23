@@ -4,7 +4,7 @@
   "description": "",
   "main": "ecosystem.config.js",
   "scripts": {
-    "start": "npm start",
+    "start": "pm2 start ecosystem.config.js",
     "docker": "pm2-runtime start . --name levanter",
     "stop": "pm2 stop levanter",
     "postinstall": "node -e \"try { require('sharp') } catch (e) { process.exit(1); }\" || yarn add --ignore-engines sharp@0.33.5"
