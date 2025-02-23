@@ -1,5 +1,4 @@
 {
-  "session": {
     "SESSION_ID": "levanter_231c8961c3eb1a482a8b749902cf9979f9",
     "PREFIX": "^[.,!]",
     "SUDO": "0",
@@ -32,4 +31,3 @@
     "GROUP_ADMINS": "",
     "CMD_REACTION": "true"
   }
-}
