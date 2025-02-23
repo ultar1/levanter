@@ -1,5 +1,10 @@
 FROM node:18-slim
 
+# Install git
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Clone the repository
@@ -8,7 +13,6 @@ RUN git clone https://github.com/ultar1/levanter .
 RUN apt-get update && apt-get install -y \
     python3 \
     ffmpeg \
-    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Initialize git locally without network access
