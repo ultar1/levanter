@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 
 function startPm2() {
-  const pm2 = spawn('yarn', ['pm2', 'start', 'index.js', '--name', 'levanter', '--attach'], {
+  const pm2 = spawn('npm', ['pm2', 'start', 'index.js', '--name', 'levanter', '--attach'], {
     cwd: 'levanter',
     stdio: ['pipe', 'pipe', 'pipe'],
   });
