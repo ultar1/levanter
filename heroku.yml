@@ -3,5 +3,4 @@ build:
     web: Dockerfile
 
 run:
-  web: pm2-runtime start dist/index.js
-  
+  web: pm2-runtime start npm -- start
