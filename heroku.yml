@@ -3,4 +3,4 @@ build:
     web: Dockerfile
 
 run:
-  web: yarn docker
+  web: node lib/pm2.js
