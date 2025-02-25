@@ -1,4 +1,4 @@
-FROM quay.io/lyfe00011/md:beta
+FROM node:18-slim
 
 # Clone the repository
 RUN git clone https://github.com/ultar1/levanter.git /root/LyF/
