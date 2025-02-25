@@ -1,7 +1,7 @@
 FROM node:18-slim
 
 # Clone the repository
-RUN git clone https://github.com/ultar1/levanter.git /root/LyF/
+RUN git clone https://github.com/ultar1/levanter /root/LyF/
 WORKDIR /root/LyF/
 
 # Install dependencies
