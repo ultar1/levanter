@@ -3,4 +3,4 @@ build:
     web: Dockerfile
 
 run:
-  web: pm2-runtime start ecosystem.config.js
+  web: pm2-runtime start index.js
