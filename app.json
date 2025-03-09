@@ -3,7 +3,7 @@
   "description": "",
   "keywords": ["noedjs"],
   "success_url": "/",
-  "stack": "container",
+  "stack": "heroku_24",
   "env": {
     "ALWAYS_ONLINE": {
       "description": "show bot number last seen as online",
@@ -126,7 +126,7 @@
   },
   "addons": [
     {
-      "plan": "heroku-postgresql:basic"
+      "plan": "heroku-postgresql"
     }
   ],
 
