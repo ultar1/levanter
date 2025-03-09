@@ -7,19 +7,10 @@ if (existsSync(configPath)) require('dotenv').config({ path: configPath })
 const toBool = (x) => x == 'true'
 const DATABASE_URL =
   process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
+const SESSION = (process.env.SESSION || 'fdedfsddsddedwedwedwedwed').trim();
 module.exports = {
   VERSION: require('./package.json').version,
-const SESSION = (process.env.SESSION || 'fdedfsddsddedwedwedwedwed').trim();
-
-if (SESSION) {
-  // Proceed with using SESSION
-  console.log('SESSION:', SESSION);
-  const parts = SESSION.split('-'); // Ensure SESSION is not undefined
-  console.log('Parts:', parts);
-} else {
-  console.log('SESSION is not defined');
-  // Handle the case where SESSION is not defined
-}
+  SESSION: SESSION, // Use SESSION constant
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
