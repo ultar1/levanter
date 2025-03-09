@@ -1,8 +1,11 @@
-// Ensure that 'start' is defined before it is used
-function start() {
-  console.log('App has started bro');
+const client = require('./lib/client')
+
+const connect = async () => {
+	try {
+		await client.connect()
+	} catch (error) {
+		console.error(error)
+	}
 }
 
-// Call the 'start' function
-start();
-
+connect()
