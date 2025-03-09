@@ -9,7 +9,17 @@ const DATABASE_URL =
   process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
 module.exports = {
   VERSION: require('./package.json').version,
-  SESSION: (process.env.SESSION || 'fdedfsddsddedwedwedwedwed').trim(),
+const SESSION = (process.env.SESSION || 'fdedfsddsddedwedwedwedwed').trim();
+
+if (SESSION) {
+  // Proceed with using SESSION
+  console.log('SESSION:', SESSION);
+  const parts = SESSION.split('-'); // Ensure SESSION is not undefined
+  console.log('Parts:', parts);
+} else {
+  console.log('SESSION is not defined');
+  // Handle the case where SESSION is not defined
+}
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
