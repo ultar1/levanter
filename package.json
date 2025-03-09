@@ -2,6 +2,7 @@
   "name": "levanter",
   "version": "3.7.1",
   "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "pm2 start . --attach --name levanter",
     "docker": "pm2-runtime start . --name levanter",
