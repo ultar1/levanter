@@ -3,7 +3,7 @@
   "description": "",
   "keywords": ["noedjs"],
   "success_url": "/",
-  "stack": "heroku_24",
+  "stack": "heroku-24",
   "env": {
     "ALWAYS_ONLINE": {
       "description": "show bot number last seen as online",
