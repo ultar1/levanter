@@ -1,5 +1,21 @@
-FROM quay.io/lyfe00011/md:beta
-RUN git clone https://github.com/lyfe00011/levanter.git /root/LyFE/
-WORKDIR /root/LyFE/
+# Use an official Node.js runtime as a parent image
+FROM node:20
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Install Git
+RUN apt-get update && \
+    apt-get install -y git
+
+# Copy the package.json and yarn.lock files to the container
+COPY package.json yarn.lock ./
+
+# Install dependencies
 RUN yarn install
-CMD ["npm", "start"]
+
+# Copy the rest of the application code to the container
+COPY . .
+
+# Start the application
+CMD ["pm2-runtime", "start", "index.js", "--name", "levanter"]
